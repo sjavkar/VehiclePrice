@@ -1,0 +1,13 @@
+------------vehicle table creation---------------------------
+
+CREATE TABLE `vehicle` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `MAKENAME` varchar(45) NOT NULL,
+  `MODELNAME` varchar(45) NOT NULL,
+  `MODELEDITION` varchar(45) NOT NULL,
+  `PRICE` int(11) NOT NULL,
+  `OPTIONS` int(11) NOT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `OPTION_idx` (`OPTIONS`),
+  CONSTRAINT `OPTION` FOREIGN KEY (`OPTIONS`) REFERENCES `option` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8
